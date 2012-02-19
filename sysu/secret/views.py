@@ -268,8 +268,7 @@ def get_info(request, content):
     try:
         weibouser = Weibouser.objects.get(weiboid=user['id'])
     except Weibouser.DoesNotExist:
-        weibouser = Weibouser(name=user['name'], weiboid=user['id'], 
-            access_token_key=user['atkey'], access_token_secret=user['atsecret'])
+        weibouser = Weibouser(name=user['name'], weiboid=user['id']）
         weibouser.save()
     weibo = Weibo(user=weibouser, weibo=content)
     weibo.save()
