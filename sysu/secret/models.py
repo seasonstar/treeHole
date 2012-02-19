@@ -6,8 +6,6 @@ from django.contrib import admin
 class Weibouser(models.Model):
     name = models.CharField("微博名", max_length=30)
     weiboid = models.CharField("微博ID", max_length=30)
-    access_token_key = models.CharField(max_length=100)
-    access_token_secret = models.CharField(max_length=100)
 
     def __unicode__(self):
         return self.name
