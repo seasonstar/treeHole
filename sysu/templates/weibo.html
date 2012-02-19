@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="post-inner">
+  <div class="messages">
+    {% if messages %}
+    <ul class="messagelist">
+      {% for message in messages %}
+      <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+         {{ message }}
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+
+<div class="box">
+    <div class="cell">{{ weibo.text }}</div>
+    <div class="inner">评论:<br />
+    {% for comment in commentlist %}
+      <p> {{ forloop.counter }}.{{ comment.user }}:{{comment.text }} </p>
+
+    {% endfor %}
+    </div>
+
+  <div class="inner">
+  <form method="POST" class="weibopost" action="{% url reply weibo.id %}" >
+        {% csrf_token %}
+
+        <textarea class="text" name="comment" cols="50" rows="3" id="comment"></textarea>
+        <input type="submit" class="greenbtn" name="submit" value="回复">
+    </form>
+
+</div>
+</div>
+{% endblock %}
+        

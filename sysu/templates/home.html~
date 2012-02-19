@@ -1,0 +1,257 @@
+{% extends "base.html" %}
+
+{% block page_class %}{% endblock %}
+
+  {% block content %}
+    {# todo: Include the main content here #}
+
+
+  <div id="container">
+
+          <div class="post-inner">
+              <div class="messages">
+              {% if messages %}
+               <ul class="messagelist">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+                    {{ message }}
+                </li>
+	        {% endfor %}
+               </ul>
+              </div>
+          {% endif %}
+
+              <div class="post">
+  
+                  <div>
+                    <h2 align="center">欢迎来到中大树洞</h2>
+                  </div>
+                  
+                    {% if not weibo_log %}
+                    <div align="center">
+                      
+                      <div class="login">
+                      <p>您还没有登录，请先用自己的帐号登录</p>
+                          <a href="{% url weibo_log %}">
+                              <img src="http://www.sinaimg.cn/blog/developer/wiki/48.png" alt="登录">
+                          </a>
+                      </div>
+                    </div>
+                    {% else %}
+                    
+                    
+                  <form class="weibopost" action="" method="POST" enctype="multipart/form-data" name="form">{% csrf_token %}
+                  <div>
+                      <p class="tips">想说点什么？</p>
+                      <div align="center">
+                          <textarea class="text" name="weibo" cols="50" rows="5" id="weibo"></textarea>
+                      </div>
+                  <div>
+                  <div class="selectpost">
+                    <a class="face" href="#" id="facebutton"><img class="fl" src="http://weibo7th.sinaapp.com/say8/images/face.png" alt="表情" border="0">表情</a>
+                      <a class="faceItemPicbg" id="faceItemPicbg" style="display: inline; ">
+                      <div class="face_box hide" id="facebox">
+<ul>
+<li title="[织]" class="emot"><a onclick="gettitle('[织]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/41/zz2_org.gif"></a></li>
+
+<li title="[神马]" class="emot"><a onclick="gettitle('[神马]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/60/horse2_org.gif"></a></li>
+
+<li title="[浮云]" class="emot"><a onclick="gettitle('[浮云]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/bc/fuyun_org.gif"></a></li>
+
+<li title="[给力]" class="emot"><a onclick="javascript:gettitle('[给力]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/c9/geili_org.gif"></a></li>
+
+<li title="[围观]" class="emot"><a onclick="javascript:gettitle('[围观]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/f2/wg_org.gif"></a></li>
+
+<li title="[威武]" class="emot"><a onclick="javascript:gettitle('[威武]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/70/vw_org.gif"></a></li>
+
+<li title="[熊猫]" class="emot"><a onclick="javascript:gettitle('[熊猫]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/6e/panda_org.gif"></a></li>
+
+<li title="[兔子]" class="emot"><a onclick="javascript:gettitle('[兔子]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/81/rabbit_org.gif"></a></li>
+
+<li title="[奥特曼]" class="emot"><a onclick="javascript:gettitle('[奥特曼]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/bc/otm_org.gif"></a></li>
+
+<li title="[囧]" class="emot"><a onclick="javascript:gettitle('[囧]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/15/j_org.gif"></a></li>
+
+<li title="[互粉]" class="emot"><a onclick="javascript:gettitle('[互粉]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/89/hufen_org.gif"></a></li>
+
+<li title="[礼物]" class="emot"><a onclick="javascript:gettitle('[礼物]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/c4/liwu_org.gif"></a></li>
+
+<li title="[呵呵]" class="emot"><a onclick="javascript:gettitle('[呵呵]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/ac/smilea_org.gif"></a></li>
+
+<li title="[嘻嘻]" class="emot"><a onclick="javascript:gettitle('[嘻嘻]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/0b/tootha_org.gif"></a></li>
+
+<li title="[哈哈]" class="emot"><a onclick="javascript:gettitle('[哈哈]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/6a/laugh.gif"></a></li>
+
+<li title="[可爱]" class="emot"><a onclick="javascript:gettitle('[可爱]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/14/tza_org.gif"></a></li>
+
+<li title="[可怜]" class="emot"><a onclick="javascript:gettitle('[可怜]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/af/kl_org.gif"></a></li>
+
+<li title="[挖鼻屎]" class="emot"><a onclick="javascript:gettitle('[挖鼻屎]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/a0/kbsa_org.gif"></a></li>
+
+<li title="[吃惊]" class="emot"><a onclick="javascript:gettitle('[吃惊]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/f4/cj_org.gif"></a></li>
+
+<li title="[害羞]" class="emot"><a onclick="javascript:gettitle('[害羞]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/6e/shamea_org.gif"></a></li>
+
+<li title="[挤眼]" class="emot"><a onclick="javascript:gettitle('[挤眼]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/c3/zy_org.gif"></a></li>
+
+<li title="[闭嘴]" class="emot"><a onclick="javascript:gettitle('[闭嘴]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/29/bz_org.gif"></a></li>
+
+<li title="[鄙视]" class="emot"><a onclick="javascript:gettitle('[鄙视]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/71/bs2_org.gif"></a></li>
+
+<li title="[爱你]" class="emot"><a onclick="javascript:gettitle('[爱你]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/6d/lovea_org.gif"></a></li>
+
+<li title="[泪]" class="emot"><a onclick="javascript:gettitle('[泪]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/9d/sada_org.gif"></a></li>
+
+<li title="[偷笑]" class="emot"><a onclick="javascript:gettitle('[偷笑]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/19/heia_org.gif"></a></li>
+
+<li title="[亲亲]" class="emot"><a onclick="javascript:gettitle('[亲亲]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/8f/qq_org.gif"></a></li>
+
+<li title="[生病]" class="emot"><a onclick="javascript:gettitle('[生病]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/b6/sb_org.gif"></a></li>
+
+<li title="[太开心]" class="emot"><a onclick="javascript:gettitle('[太开心]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/58/mb_org.gif"></a></li>
+
+<li title="[懒得理你]" class="emot"><a onclick="javascript:gettitle('[懒得理你]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/17/ldln_org.gif"></a></li>
+
+<li title="[右哼哼]" class="emot"><a onclick="javascript:gettitle('[右哼哼]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/98/yhh_org.gif"></a></li>
+
+<li title="[左哼哼]" class="emot"><a onclick="javascript:gettitle('[左哼哼]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/6d/zhh_org.gif"></a></li>
+
+<li title="[嘘]" class="emot"><a onclick="javascript:gettitle('[嘘]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/a6/x_org.gif"></a></li>
+
+<li title="[衰]" class="emot"><a onclick="javascript:gettitle('[衰]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/af/cry.gif"></a></li>
+
+<li title="[委屈]" class="emot"><a onclick="javascript:gettitle('[委屈]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/73/wq_org.gif"></a></li>
+
+<li title="[吐]" class="emot"><a onclick="javascript:gettitle('[吐]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/9e/t_org.gif"></a></li>
+
+<li title="[打哈气]" class="emot"><a onclick="javascript:gettitle('[打哈气]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/f3/k_org.gif"></a></li>
+
+<li title="[抱抱]" class="emot"><a onclick="javascript:gettitle('[抱抱]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/27/bba_org.gif"></a></li>
+
+<li title="[怒]" class="emot"><a onclick="javascript:gettitle('[怒]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/7c/angrya_org.gif"></a></li>
+
+<li title="[疑问]" class="emot"><a onclick="javascript:gettitle('[疑问]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/5c/yw_org.gif"></a></li>
+
+<li title="[馋嘴]" class="emot"><a onclick="javascript:gettitle('[馋嘴]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/a5/cza_org.gif"></a></li>
+
+<li title="[拜拜]" class="emot"><a onclick="javascript:gettitle('[拜拜]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/70/88_org.gif"></a></li>
+
+<li title="[思考]" class="emot"><a onclick="javascript:gettitle('[思考]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/e9/sk_org.gif"></a></li>
+
+<li title="[汗]" class="emot"><a onclick="javascript:gettitle('[汗]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/24/sweata_org.gif"></a></li>
+
+<li title="[困]" class="emot"><a onclick="javascript:gettitle('[困]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/7f/sleepya_org.gif"></a></li>
+
+<li title="[睡觉]" class="emot"><a onclick="javascript:gettitle('[睡觉]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/6b/sleepa_org.gif"></a></li>
+
+<li title="[钱]" class="emot"><a onclick="javascript:gettitle('[钱]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/90/money_org.gif"></a></li>
+
+<li title="[失望]" class="emot"><a onclick="javascript:gettitle('[失望]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/0c/sw_org.gif"></a></li>
+
+<li title="[酷]" class="emot"><a onclick="javascript:gettitle('[酷]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/40/cool_org.gif"></a></li>
+
+<li title="[花心]" class="emot"><a onclick="javascript:gettitle('[花心]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/8c/hsa_org.gif"></a></li>
+
+<li title="[哼]" class="emot"><a onclick="javascript:gettitle('[哼]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/49/hatea_org.gif"></a></li>
+
+<li title="[鼓掌]" class="emot"><a onclick="javascript:gettitle('[鼓掌]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/36/gza_org.gif"></a></li>
+
+<li title="[晕]" class="emot"><a onclick="javascript:gettitle('[晕]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/d9/dizzya_org.gif"></a></li>
+
+<li title="[悲伤]" class="emot"><a onclick="javascript:gettitle('[悲伤]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/1a/bs_org.gif"></a></li>
+
+<li title="[抓狂]" class="emot"><a onclick="javascript:gettitle('[抓狂]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/62/crazya_org.gif"></a></li>
+
+<li title="[黑线]" class="emot"><a onclick="javascript:gettitle('[黑线]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/91/h_org.gif"></a></li>
+
+<li title="[阴险]" class="emot"><a onclick="javascript:gettitle('[阴险]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/6d/yx_org.gif"></a></li>
+
+<li title="[怒骂]" class="emot"><a onclick="javascript:gettitle('[怒骂]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/89/nm_org.gif"></a></li>
+
+<li title="[心]" class="emot"><a onclick="javascript:gettitle('[心]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/40/hearta_org.gif"></a></li>
+
+<li title="[伤心]" class="emot"><a onclick="javascript:gettitle('[伤心]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/ea/unheart.gif"></a></li>
+
+<li title="[猪头]" class="emot"><a onclick="javascript:gettitle('[猪头]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/58/pig.gif"></a></li>
+
+<li title="[ok]" class="emot"><a onclick="javascript:gettitle('[ok]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/d6/ok_org.gif"></a></li>
+
+<li title="[耶]" class="emot"><a onclick="javascript:gettitle('[耶]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/d9/ye_org.gif"></a></li>
+
+<li title="[good]" class="emot"><a onclick="javascript:gettitle('[good]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/d8/good_org.gif"></a></li>
+
+<li title="[不要]" class="emot"><a onclick="javascript:gettitle('[不要]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/c7/no_org.gif"></a></li>
+
+<li title="[赞]" class="emot"><a onclick="javascript:gettitle('[赞]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/d0/z2_org.gif"></a></li>
+
+<li title="[来]" class="emot"><a onclick="javascript:gettitle('[来]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/40/come_org.gif"></a></li>
+
+<li title="[弱]" class="emot"><a onclick="javascript:gettitle('[弱]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/d8/sad_org.gif"></a></li>
+
+<li title="[蜡烛]" class="emot"><a onclick="javascript:gettitle('[蜡烛]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/91/lazu_org.gif"></a></li>
+
+<li title="[钟]" class="emot"><a onclick="javascript:gettitle('[钟]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/d3/clock_org.gif"></a></li>
+
+<li title="[蛋糕]" class="emot"><a onclick="javascript:gettitle('[蛋糕]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/6a/cake.gif"></a></li>
+
+<li title="[话筒]" class="emot"><a onclick="javascript:gettitle('[话筒]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/1b/m_org.gif"></a></li>
+<li title="[音乐]" class="emot"><a onclick="javascript:gettitle('[音乐]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/d0/music_org.gif"></a></li>
+
+<li title="[电影]" class="emot"><a onclick="javascript:gettitle('[电影]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/77/movie_org.gif"></a></li>
+
+<li title="[月亮]" class="emot"><a onclick="javascript:gettitle('[月亮]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/b9/moon.gif"></a></li>
+
+<li title="[唱歌]" class="emot"><a onclick="javascript:gettitle('[唱歌]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/79/ktv_org.gif"></a></li>
+
+<li title="[冰棍]" class="emot"><a onclick="javascript:gettitle('[冰棍]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/3a/ice.gif"></a></li>
+
+<li title="[房子]" class="emot"><a onclick="javascript:gettitle('[房子]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/d1/house_org.gif"></a></li>
+
+<li title="[帽子]" class="emot"><a onclick="javascript:gettitle('[帽子]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/25/hat_org.gif"></a></li>
+
+<li title="[足球]" class="emot"><a onclick="javascript:gettitle('[足球]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/c0/football.gif"></a></li>
+
+<li title="[惊恐]" class="emot"><a onclick="javascript:gettitle('[惊恐]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/46/jingkong_thumb.gif"></a></li>
+
+<li title="[欢欢]" class="emot"><a onclick="javascript:gettitle('[欢欢]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/c3/liaobuqi_thumb.gif"></a></li>
+
+<li title="[乐乐]" class="emot"><a onclick="javascript:gettitle('[乐乐]');" href="#"><img src="http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/66/guanbuzhao_thumb.gif"></a></li>
+
+</ul>
+                           </div>
+                    </a>
+                      <input name="todayhole" type="radio" value="treehole" checked="checked">发送到中大树洞
+                      <input name="tofind" type="checkbox" value="find" >发送到中大寻物
+                      <input name="upload" type="file" class="upFile" id="upload">
+                  </div>
+                  <br>
+                  </div>
+                           
+                  <div class="postbtn">  
+                      <input name="submit" type="submit" id="submit" class="blue-button" value="发布">
+                      <input type="button" id="button-state" class="gray-button" name="showbtn" value="更多说明" onclick="showid('moreover')">
+                  </div>
+                  </div>
+                  </form>
+              </div>
+              <div class="right">
+                  <div class="fwrap">
+                    <ul class="flist">
+                      <li><div class="follow radius5"> <a href="{% url follow 2619983742 %}">关注</a></div> <a href="http://weibo.com/201257579"><img src="http://tp3.sinaimg.cn/2619983742/50/5619592403/1" alt="中大树洞"></a></li>
+                      <li><div class="follow radius5"> <a href="{% url follow 2649316154 %}">关注</a></div> <a href="http://weibo.com/2649316154"><img src="http://tp3.sinaimg.cn/2649316154/50/5620573959/1" alt="中大树洞"></a></li>
+                      <li><div class="follow radius5"> <a href="{% url follow 2635435174 %}">关注</a></div> <a href="http://weibo.com/2635435174"><img src="http://tp3.sinaimg.cn/2635435174/50/5620029284/1" alt="中大树洞"></a></li>
+                    </ul>
+                  </div>
+                  <div class="notice">
+                  </div>
+              </div>
+          
+          <div id="moreover" class="moreover">
+                <p>欢迎吐糟，有问题或建议请私信树洞君^_^</p>
+                <br><font color="#0033FF">ps:点击四周任意灰色的区域即可关闭本页面。</font>
+          </div>
+          
+    {% endif %} <!-- 登录才显示 -->
+  </div>
+{% endblock %}
+

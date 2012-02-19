@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/sysusecret/!svn/ver/730/1/sysu/weibo
+END
+api.py
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/sysusecret/!svn/ver/709/1/sysu/weibo/api.py
+END
+error.py
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/sysusecret/!svn/ver/684/1/sysu/weibo/error.py
+END
+streaming.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/sysusecret/!svn/ver/730/1/sysu/weibo/streaming.py
+END
+cursor.py
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/sysusecret/!svn/ver/684/1/sysu/weibo/cursor.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/sysusecret/!svn/ver/684/1/sysu/weibo/__init__.py
+END
+parsers.py
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/sysusecret/!svn/ver/728/1/sysu/weibo/parsers.py
+END
+oauth.py
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/sysusecret/!svn/ver/684/1/sysu/weibo/oauth.py
+END
+utils.py
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/sysusecret/!svn/ver/684/1/sysu/weibo/utils.py
+END
+auth.py
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/sysusecret/!svn/ver/723/1/sysu/weibo/auth.py
+END
+binder.py
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/sysusecret/!svn/ver/724/1/sysu/weibo/binder.py
+END
+cache.py
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/sysusecret/!svn/ver/725/1/sysu/weibo/cache.py
+END
+models.py
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/sysusecret/!svn/ver/726/1/sysu/weibo/models.py
+END

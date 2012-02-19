@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 31
+/sysusecret/!svn/ver/823/1/sysu
+END
+manage.py
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/sysusecret/!svn/ver/5/1/sysu/manage.py
+END
+sysu.sql
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/sysusecret/!svn/ver/39/1/sysu/sysu.sql
+END
+views.py
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/sysusecret/!svn/ver/5/1/sysu/views.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/sysusecret/!svn/ver/5/1/sysu/__init__.py
+END
+settings.py
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/sysusecret/!svn/ver/734/1/sysu/settings.py
+END
+urls.py
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/sysusecret/!svn/ver/825/1/sysu/urls.py
+END

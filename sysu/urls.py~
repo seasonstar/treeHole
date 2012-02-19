@@ -1,0 +1,16 @@
+from django.conf.urls.defaults import patterns, include, url
+from django.views.generic import TemplateView
+from django.contrib import admin
+
+admin.autodiscover()
+
+urlpatterns = patterns('sysu.secret.views',
+    # (r'^mysite/', include('mysite.foo.urls')),
+    url(r'^$', TemplateView.as_view(template_name='home.html'), name='home'),
+    url(r'^$', 'index'),
+    url(r'^log/$', 'log', name='weibo_log'),
+    url(r'^logincheck', 'log_check', name='weibo_check'),
+    url(r'^logout/$', 'logout', name='weibo_logout'),
+
+    (r'^admin/', include(admin.site.urls)),
+)

@@ -1,0 +1,9 @@
+---
+name: sysusecret
+version: 1
+
+cron:
+  - description: cron_test
+    url: /weibo/update
+    schedule: every day of month 20:00
+...
