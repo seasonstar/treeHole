@@ -17,7 +17,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    ('seasonstar', 'seasonskyr@gmail.com'),
+    ('admin', 'admin@gmail.com'),
 )
 
 MANAGERS = ADMINS
@@ -119,7 +119,7 @@ INSTALLED_APPS = (
 
 
 # SINA WEIBO APP SETTINGS
-APP_KEY = '1995744030'
-APP_SECRET = '46323a72237ef96752b4296b5dedd6ee'
+APP_KEY = '********'
+APP_SECRET = '************'
 
 BACK_URL = "http://sysusecret.sinaapp.com/"
